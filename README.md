@@ -11,7 +11,9 @@
 Este projeto tem como objetivo controlar uma matriz de LED 5x5 utilizando um joystick. O joystick é utilizado para selecionar direções e exibir sprites correspondentes na matriz de LED. O projeto foi desenvolvido para a plataforma Raspberry Pi Pico, utilizando as bibliotecas `joystick_lib` e `malha_led`.
 
 ## Montagem do Projeto
-![Placa1](images/placa_up.png)
+![Placa1](images/Placa_up.png)
+
+
 ![Placa2](images/placa_profile.png)
 
 
