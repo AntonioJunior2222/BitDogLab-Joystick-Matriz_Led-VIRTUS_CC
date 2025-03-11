@@ -14,7 +14,7 @@ Este projeto tem como objetivo controlar uma matriz de LED 5x5 utilizando um joy
 ![Placa1](images/Placa_up.png)
 
 
-![Placa2](images/placa_profile.png)
+![Placa2](images/Placa_profile.png)
 
 
 ### Componentes Utilizados
