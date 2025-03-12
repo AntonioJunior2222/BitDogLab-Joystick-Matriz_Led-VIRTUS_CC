@@ -122,28 +122,28 @@ As funções de teste foram desenvolvidas para validar o funcionamento do joysti
    - **Detalhes**:
      - Verifica se o ADC foi inicializado.
      - Checa o estado inicial do botão (deve estar HIGH).
-     - Usa o LED interno para indicar sucesso (pisca 1 segundo) ou falha.
+    - Usa o LED 12 da matriz para mostrar visualmente o resultado(Verde para sucesso, Vermelho para fracasso).
 
 2. **`void test_adc_raw(void)`**
    - **Descrição**: Realiza 10 leituras consecutivas dos eixos X e Y do joystick.
    - **Detalhes**:
      - Verifica se os valores estão dentro da faixa esperada (0-4095 para 12 bits).
      - Exibe os valores no terminal.
-     - Usa o LED interno para indicar sucesso (aceso) ou falha (apagado).
+     - Usa o LED 12 da matriz para mostrar visualmente o resultado(Verde para sucesso, Vermelho para fracasso).
 
 3. **`void test_normalizacao(void)`**
    - **Descrição**: Verifica se os valores dos eixos X e Y estão sendo normalizados corretamente para o intervalo de -100 a 100.
    - **Detalhes**:
      - Exibe os valores normalizados no terminal.
      - Verifica se os valores estão dentro dos limites esperados.
-     - Usa o LED interno para feedback imediato.
+     - Usa o LED 12 da matriz para mostrar visualmente o resultado(Verde para sucesso, Vermelho para fracasso).
 
 4. **`void test_botao(void)`**
    - **Descrição**: Testa o funcionamento do botão do joystick.
    - **Detalhes**:
      - Aguarda o pressionamento do botão por até 5 segundos.
      - Exibe o estado do botão no terminal.
-     - Usa o LED interno para indicar se o botão foi pressionado.
+     - Usa o LED 12 da matriz para mostrar visualmente o resultado(Verde para sucesso, Vermelho para fracasso).
 
 
 ## Funções Implementadas no `main`
