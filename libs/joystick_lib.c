@@ -72,20 +72,20 @@ void botao_interrupcao(uint gpio, uint32_t events) {
 
     if (gpio == BOTAO_A) { // Verifica se a interrupção ocorreu no pino do botão
         if (events & GPIO_IRQ_EDGE_RISE) { // Verifica se foi uma borda de subida (botão solto)
-            if(tema_cor[0] == 255) {
-                tema_cor[0] = 232;   // R
-                tema_cor[1] = 255;   // G
-                tema_cor[2] = 232;   // B
+            if(tema_cor[0]!=0) {
+                tema_cor[0] = 0;   // R
+                tema_cor[1] = 255; // G
+                tema_cor[2] = 0;   // B
             }
-            else if(tema_cor[1] == 255) {
-                tema_cor[0] = 232;   // R
-                tema_cor[1] = 232;   // G
-                tema_cor[2] = 255;   // B
+            else if(tema_cor[1]!=0) {
+                tema_cor[0] = 0;   // R
+                tema_cor[1] = 0;   // G
+                tema_cor[2] = 255; // B
             }
-            else if(tema_cor[2] == 255) {
-                tema_cor[0] = 255;   // R
-                tema_cor[1] = 232;   // G
-                tema_cor[2] = 232;   // B
+            else if(tema_cor[2]!=0) {
+                tema_cor[0] = 255; // R
+                tema_cor[1] = 0;   // G
+                tema_cor[2] = 0;   // B
             }
         }
     }
