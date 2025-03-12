@@ -111,6 +111,41 @@ A biblioteca `malha_led` controla uma matriz de LED 5x5, permitindo a exibição
 
 ---
 
+## Funções de Teste Implementadas
+
+As funções de teste foram desenvolvidas para validar o funcionamento do joystick e da matriz de LED. Elas utilizam o LED interno da Raspberry Pi Pico (GPIO 25) para feedback visual e exibem resultados detalhados no terminal.
+
+### **Funções de Teste:**
+
+1. **`void test_init(void)`**
+   - **Descrição**: Testa a inicialização do hardware, verificando se o ADC e GPIO foram configurados corretamente.
+   - **Detalhes**:
+     - Verifica se o ADC foi inicializado.
+     - Checa o estado inicial do botão (deve estar HIGH).
+     - Usa o LED interno para indicar sucesso (pisca 1 segundo) ou falha.
+
+2. **`void test_adc_raw(void)`**
+   - **Descrição**: Realiza 10 leituras consecutivas dos eixos X e Y do joystick.
+   - **Detalhes**:
+     - Verifica se os valores estão dentro da faixa esperada (0-4095 para 12 bits).
+     - Exibe os valores no terminal.
+     - Usa o LED interno para indicar sucesso (aceso) ou falha (apagado).
+
+3. **`void test_normalizacao(void)`**
+   - **Descrição**: Verifica se os valores dos eixos X e Y estão sendo normalizados corretamente para o intervalo de -100 a 100.
+   - **Detalhes**:
+     - Exibe os valores normalizados no terminal.
+     - Verifica se os valores estão dentro dos limites esperados.
+     - Usa o LED interno para feedback imediato.
+
+4. **`void test_botao(void)`**
+   - **Descrição**: Testa o funcionamento do botão do joystick.
+   - **Detalhes**:
+     - Aguarda o pressionamento do botão por até 5 segundos.
+     - Exibe o estado do botão no terminal.
+     - Usa o LED interno para indicar se o botão foi pressionado.
+
+
 ## Funções Implementadas no `main`
 
 O arquivo `joystick.c` é o ponto de entrada do projeto. Ele integra as bibliotecas do joystick e da matriz de LED, implementando a lógica principal do projeto.
