@@ -140,21 +140,15 @@ O arquivo `joystick.c` é o ponto de entrada do projeto. Ele integra as bibliote
 ### Como Compilar e Executar
 
 1. **Requisitos**:
-   - Compilador ARM GCC (`arm-none-eabi-gcc`).
-   - SDK da Raspberry Pi Pico.
+   - Visual Studio Code
+   - Extensão Rapsberry Pi Pico
 
 2. **Compilação**:
-   - Compile o projeto usando o CMake:
-     ```bash
-     mkdir build
-     cd build
-     cmake ..
-     make
-     ```
+   - Importe o projeto pela interface da extensão e coloque a versão 1.5.1
 
 3. **Execução**:
    - Conecte a Raspberry Pi Pico ao computador via USB.
-   - Carregue o arquivo `.uf2` gerado na Pico.
+   - Carregue o arquivo `.uf2` gerado na Pico, ou instale o zadig para executar diretamente do VSCode.
 
 4. **Interação**:
    - Movimente o joystick para controlar a exibição dos sprites na matriz de LED.
