@@ -149,6 +149,8 @@ As funções de teste foram desenvolvidas para validar o funcionamento do joysti
 ## Funções Implementadas no `main`
 
 O arquivo `joystick.c` é o ponto de entrada do projeto. Ele integra as bibliotecas do joystick e da matriz de LED, implementando a lógica principal do projeto.
+Aqui nós temos 2 "main's" um para executar os testes e o outro para mostrar uma pequena interação que fiz com a matriz de led.
+O código só ira funcionar quando um deles estiver totalmente comentado.
 
 ### **Lógica Principal**
 
