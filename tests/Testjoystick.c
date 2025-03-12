@@ -15,7 +15,7 @@ void test_init() {
     printf("Botao SW (GPIO22): %s\n", sw_state ? "HIGH (OK)" : "LOW (FALHA)");
     if(sw_state == 1){
         set_cor(0,255,0);
-        npSetLED(12, 150);
+        npSetLED(12,100);
         npWrite();
         sleep_ms(1500);
         npSetLED(12, 0);
@@ -23,7 +23,7 @@ void test_init() {
         sleep_ms(3000);
     }else {
         set_cor(255, 0, 0);
-        npSetLED(12, 150);
+        npSetLED(12,100);
         npWrite();
         sleep_ms(1500);
         npSetLED(12, 0);
@@ -53,7 +53,7 @@ void test_adc_raw() {
     printf("Resultado: %s\n", success ? "OK" : "FALHA");
     if(success == 1){
         set_cor(0,255,0);
-        npSetLED(12, 150);
+        npSetLED(12,100);
         npWrite();
         sleep_ms(1500);
         npSetLED(12, 0);
@@ -61,7 +61,7 @@ void test_adc_raw() {
         sleep_ms(3000);
     }else {
         set_cor(255, 0, 0);
-        npSetLED(12, 150);
+        npSetLED(12,100);
         npWrite();
         sleep_ms(1500);
         npSetLED(12, 0);
@@ -87,7 +87,7 @@ void test_normalizacao() {
     
     if(success == 1){
         set_cor(0,255,0);
-        npSetLED(12, 150);
+        npSetLED(12, 100);
         npWrite();
         sleep_ms(1500);
         npSetLED(12, 0);
@@ -95,7 +95,7 @@ void test_normalizacao() {
         sleep_ms(3000);
     }else {
         set_cor(255, 0, 0);
-        npSetLED(12, 150);
+        npSetLED(12, 100);
         npWrite();
         sleep_ms(1500);
         npSetLED(12, 0);
@@ -122,7 +122,7 @@ void test_botao() {
     printf("Botao %s\n", pressed ? "PRESSIONADO (OK)" : "NAO DETECTADO (FALHA)");
     if(pressed == 1){
         set_cor(0,255,0);
-        npSetLED(12, 150);
+        npSetLED(12, 100);
         npWrite();
         sleep_ms(1500);
         npSetLED(12, 0);
@@ -130,7 +130,7 @@ void test_botao() {
         sleep_ms(3000);
     }else {
         set_cor(255, 0, 0);
-        npSetLED(12, 150);
+        npSetLED(12, 100);
         npWrite();
         sleep_ms(1500);
         npSetLED(12, 0);

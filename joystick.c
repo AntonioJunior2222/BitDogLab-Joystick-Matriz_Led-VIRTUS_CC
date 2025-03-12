@@ -19,7 +19,7 @@
 #define UART_RX_PIN 5
 
 
-/*
+
 int main()
 {
     stdio_init_all();
@@ -37,7 +37,7 @@ int main()
     }
 }
 
-*/
+/*
 int main(){
     stdio_init_all();
     init_joystick();
@@ -78,3 +78,4 @@ int main(){
         npWrite();  
     }
 }
+*/
