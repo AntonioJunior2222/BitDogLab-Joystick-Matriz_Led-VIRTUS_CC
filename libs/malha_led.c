@@ -5,7 +5,7 @@
 static PIO np_pio;       // Instância do PIO usada para controlar os LEDs
 static uint sm;          // Máquina de estados do PIO
 static npLED_t leds[LED_COUNT]; // Buffer de pixels para os LEDs
-uint8_t tema_cor[3] = {255, 0, 0}; // Verde (R=0, G=255, B=0)
+uint8_t tema_cor[3] = {255, 0, 0}; // Verde (R=255, G=0, B=0)
 
 // Inicializa a matriz de LEDs
 void npInit() {
@@ -65,4 +65,11 @@ void display_sprite(const int sprite[5][5][3]) {
         }
     }
     npWrite();
+}
+
+
+void set_cor(uint8_t r, uint8_t g, uint8_t b){
+    tema_cor[0] = r;   // R
+    tema_cor[1] = g; // G
+    tema_cor[2] = b;   // B
 }

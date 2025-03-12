@@ -1,20 +1,12 @@
 #include <stdio.h>
-#include <math.h>
 #include "pico/stdlib.h"
-#include "hardware/spi.h"
-#include "hardware/i2c.h"
-#include "hardware/dma.h"
 #include "hardware/pio.h"
-#include "hardware/interp.h"
-#include "hardware/timer.h"
-#include "hardware/watchdog.h"
-#include "hardware/clocks.h"
 #include "hardware/uart.h"
 #include "hardware/adc.h"
 #include "libs/joystick_lib.h"
 #include "libs/malha_led.h"
 #include "libs/direcoes.h"
-
+#include "tests/Testjoystick.h"
 
 // UART defines
 // By default the stdout UART is `uart0`, so we will use the second one
@@ -27,9 +19,26 @@
 #define UART_RX_PIN 5
 
 
-
+/*
 int main()
 {
+    stdio_init_all();
+    npInit();
+    init_joystick();
+    
+    while(1) {
+        test_init();
+        test_adc_raw();
+        test_normalizacao();
+        test_botao();
+        
+        printf("\n=== Ciclo de Testes Concluido ===\n");
+        sleep_ms(5000);
+    }
+}
+
+*/
+int main(){
     stdio_init_all();
     init_joystick();
     npInit();
@@ -37,15 +46,8 @@ int main()
     npWrite(); // Escreve os dados nos LEDs.
 
     while (true) {
-        //mic_leitura(&valor_mic);
-        //printf("mic: %.2f\n", valor_mic*(3.3/4096));
         joystick_captura();
         normalizar_joystick();
-        //printf("X: %d\n", get_joystick_x_norm());
-        //printf("Y: %d\n", get_joystick_y_norm());
-        //printf("\n");
-        printf("Botao: %d\n", get_botao());
-        
         npClear();
         npWrite(); // Escreve os dados nos LEDs.
         sleep_ms(1);
@@ -73,7 +75,6 @@ int main()
         
             case NEUTRO: display_sprite(neutro); break;
         }
-        npWrite();
-        
+        npWrite();  
     }
 }

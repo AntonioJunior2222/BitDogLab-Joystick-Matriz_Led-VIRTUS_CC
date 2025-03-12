@@ -53,4 +53,12 @@ void display_sprite(const int sprite[5][5][3]);
 // - Índice linear correspondente (0 a LED_COUNT-1)
 int getIndex(int x, int y);
 
+
+// Função para denominar a cor do led
+// Os valores vão de 0 a 255
+// R - Vermelho (Red)
+// G - Verde (Green)
+// B - Azul(Blue)
+void set_cor(uint8_t r, uint8_t g, uint8_t b);
+
 #endif

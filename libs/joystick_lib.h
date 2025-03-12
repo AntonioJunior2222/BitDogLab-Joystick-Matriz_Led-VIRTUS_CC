@@ -33,11 +33,11 @@ void joystick_captura();
 
 // Função para obter o valor do eixo X (vertical) do joystick
 // Retorna o valor lido do eixo X (0-4095 para ADC de 12 bits)
-uint16_t get_joystick_x();
+uint16_t get_joystick_x_puro();
 
 // Função para obter o valor do eixo Y (horizontal) do joystick
 // Retorna o valor lido do eixo Y (0-4095 para ADC de 12 bits)
-uint16_t get_joystick_y();
+uint16_t get_joystick_y_puro();
 
 // Função para obter o estado do botão do joystick
 // Retorna true se o botão estiver pressionado, false caso contrário

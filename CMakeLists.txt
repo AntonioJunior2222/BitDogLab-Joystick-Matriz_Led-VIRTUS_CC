@@ -35,7 +35,10 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(joystick joystick.c libs/joystick_lib.c libs/malha_led.c)
+add_executable(joystick joystick.c 
+        libs/joystick_lib.c 
+        libs/malha_led.c
+        tests/Testjoystick.c)
 
 pico_set_program_name(joystick "joystick")
 pico_set_program_version(joystick "0.1")
@@ -70,4 +73,3 @@ target_link_libraries(joystick
         )
 
 pico_add_extra_outputs(joystick)
-

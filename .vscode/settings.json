@@ -38,6 +38,14 @@
     "raspberry-pi-pico.ninjaPath": "${HOME}/.pico-sdk/ninja/v1.12.1/ninja",
     "files.associations": {
         "*.embeddedhtml": "html",
-        "uart.h": "c"
+        "uart.h": "c",
+        "direcoes.h": "c",
+        "joystick_lib.h": "c",
+        "unity.h": "c",
+        "adc.h": "c",
+        "stdio.h": "c",
+        "testjoystick.h": "c",
+        "pio.h": "c",
+        "malha_led.h": "c"
     }
 }

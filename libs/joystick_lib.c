@@ -53,19 +53,13 @@ void botao_interrupcao(uint gpio, uint32_t events) {
     if (gpio == SW) { // Verifica se a interrupção ocorreu no pino do botão
         if (events & GPIO_IRQ_EDGE_RISE) { // Verifica se foi uma borda de subida (botão solto)
             if(tema_cor[0]!=0) {
-                tema_cor[0] = 0;   // R
-                tema_cor[1] = 255; // G
-                tema_cor[2] = 0;   // B
+                set_cor(0, 255, 0); // Verde
             }
             else if(tema_cor[1]!=0) {
-                tema_cor[0] = 0;   // R
-                tema_cor[1] = 0;   // G
-                tema_cor[2] = 255; // B
+                set_cor(0, 0, 255); // Azul
             }
             else if(tema_cor[2]!=0) {
-                tema_cor[0] = 255; // R
-                tema_cor[1] = 0;   // G
-                tema_cor[2] = 0;   // B
+                set_cor(255, 0, 0); // Vermelho
             }
         }
     }
@@ -73,19 +67,13 @@ void botao_interrupcao(uint gpio, uint32_t events) {
     if (gpio == BOTAO_A) { // Verifica se a interrupção ocorreu no pino do botão
         if (events & GPIO_IRQ_EDGE_RISE) { // Verifica se foi uma borda de subida (botão solto)
             if(tema_cor[0]!=0) {
-                tema_cor[0] = 0;   // R
-                tema_cor[1] = 255; // G
-                tema_cor[2] = 0;   // B
+                set_cor(0, 255, 0); // Verde
             }
             else if(tema_cor[1]!=0) {
-                tema_cor[0] = 0;   // R
-                tema_cor[1] = 0;   // G
-                tema_cor[2] = 255; // B
+                set_cor(0, 0, 255); // Azul
             }
             else if(tema_cor[2]!=0) {
-                tema_cor[0] = 255; // R
-                tema_cor[1] = 0;   // G
-                tema_cor[2] = 0;   // B
+                set_cor(255, 0, 0); // Vermelho
             }
         }
     }
