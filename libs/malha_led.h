@@ -4,6 +4,7 @@
 #include "pico/stdlib.h"
 #include "hardware/pio.h"
 
+
 // Configurações da matriz
 #define LED_COUNT 25 // Número total de LEDs na matriz (5x5)
 #define LED_PIN 7    // Pino GPIO conectado ao barramento de dados dos LEDs NeoPixel
