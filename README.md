@@ -150,10 +150,6 @@ As funções de teste foram desenvolvidas para validar o funcionamento do joysti
 
 O arquivo `joystick.c` é o ponto de entrada do projeto. Ele integra as bibliotecas do joystick e da matriz de LED, implementando a lógica principal do projeto.
 
-
-**OBS: Aqui nós temos 2 "main's" um para executar os testes e o outro para mostrar uma pequena interação que fiz com a matriz de led.
-O código só ira funcionar quando um deles estiver totalmente comentado.**
-
 ### **Lógica Principal**
 
 1. **Inicialização**:
@@ -193,6 +189,7 @@ O código só ira funcionar quando um deles estiver totalmente comentado.**
    - Movimente o joystick para controlar a exibição dos sprites na matriz de LED.
    - Pressione o botão do joystick para alternar entre as cores tema (vermelho, verde, azul).
    - Pressione o botão adicional para alternar entre tons pastel.
+   - Ao apertar o Botão B você vai trocar entre rotina de testes e o joystick integrado com a malha de leds
 
 ---
 
