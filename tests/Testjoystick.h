@@ -7,6 +7,7 @@
 #include "hardware/adc.h"      // Controle do conversor analógico-digital (ADC)
 #include "libs/joystick_lib.h" // Biblioteca do joystick (leitura e normalização)
 #include "libs/malha_led.h"    // Biblioteca da Malha de LED
+#include "libs/direcoes.h"
 
 // =============================================
 // Protótipos das Funções de Teste
@@ -34,5 +35,10 @@ void test_normalizacao(void);
 // Aguarda o pressionamento do botão por um tempo limite (5 segundos)
 // Exibe o estado do botão no terminal e usa o LED para feedback
 void test_botao(void);
+
+
+void test_completo(void);
+
+void test_display(void);
 
 #endif // TEST_JOYSTICK_H

@@ -14,6 +14,9 @@
 #define ADC_CHANNEL_1 1 // Canal ADC para o Eixo Y
 #define SW 22 // Botão Joystick - Pino GPIO conectado ao botão do joystick
 #define BOTAO_A 5
+#define BOTAO_B 6
+
+extern int testing;
 
 // Função para configurar o joystick
 // Inicializa os pinos GPIO e ADC para leitura dos eixos X e Y, e o botão

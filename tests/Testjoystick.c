@@ -1,5 +1,6 @@
 #include "Testjoystick.h"
 #include "libs/joystick_lib.h"
+#include "libs/direcoes.h"
 
 // Teste 1: Verifica inicialização do ADC e GPIO
 void test_init() {
@@ -136,5 +137,56 @@ void test_botao() {
         npSetLED(12, 0);
         npWrite();
         sleep_ms(3000);
+    }
+}
+
+void test_completo(){
+    while(true){
+        if(testing == 0) break;
+        test_init();
+        if(testing == 0) break;
+        test_adc_raw();
+        if(testing == 0) break;
+        test_normalizacao();
+        if(testing == 0) break;
+        test_botao();
+        printf("\n=== Ciclo de Testes Concluido ===\n");
+        sleep_ms(2000);
+    }
+}
+
+void test_display(){
+    while(true){
+        if(testing == 1) break;
+        joystick_captura();
+        normalizar_joystick();
+        npClear();
+        npWrite(); // Escreve os dados nos LEDs.
+        sleep_ms(1);
+
+        switch (get_direcao()) {
+            // Direções principais
+            case CIMA1: display_sprite(cima1); break;
+            case CIMA2: display_sprite(cima2); break;
+            case BAIXO1: display_sprite(bai1); break;
+            case BAIXO2: display_sprite(bai2); break;
+            case DIREITA1: display_sprite(dir1); break;
+            case DIREITA2: display_sprite(dir2); break;
+            case ESQUERDA1: display_sprite(esq1); break;
+            case ESQUERDA2: display_sprite(esq2); break;
+        
+            // Diagonais
+            case DIAG_CIMA_DIREITA1: display_sprite(dircim1); break;
+            case DIAG_CIMA_DIREITA2: display_sprite(dircim2); break;
+            case DIAG_CIMA_ESQUERDA1: display_sprite(esqcim1); break;
+            case DIAG_CIMA_ESQUERDA2: display_sprite(esqcim2); break;
+            case DIAG_BAIXO_DIREITA1: display_sprite(dirbax1); break;
+            case DIAG_BAIXO_DIREITA2: display_sprite(dirbax2); break;
+            case DIAG_BAIXO_ESQUERDA1: display_sprite(esqbax1); break;
+            case DIAG_BAIXO_ESQUERDA2: display_sprite(esqbax2); break;
+        
+            case NEUTRO: display_sprite(neutro); break;
+        }
+        npWrite();
     }
 }

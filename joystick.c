@@ -26,14 +26,13 @@ int main()
     npInit();
     init_joystick();
     
-    while(1) {
-        test_init();
-        test_adc_raw();
-        test_normalizacao();
-        test_botao();
-        
-        printf("\n=== Ciclo de Testes Concluido ===\n");
-        sleep_ms(5000);
+    while(true) {
+        test_completo();
+        npClear();
+        npWrite(); // Escreve os dados nos LEDs.
+        test_display();
+        npClear();
+        npWrite(); // Escreve os dados nos LEDs.
     }
 }
 

@@ -38,6 +38,7 @@ pico_sdk_init()
 add_executable(joystick joystick.c 
         libs/joystick_lib.c 
         libs/malha_led.c
+        libs/direcoes.c
         tests/Testjoystick.c)
 
 pico_set_program_name(joystick "joystick")

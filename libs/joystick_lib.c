@@ -7,6 +7,7 @@ uint16_t valor_x;    // Valor do eixo X (0-4095 para ADC de 12 bits)
 uint16_t valor_y;    // Valor do eixo Y (0-4095 para ADC de 12 bits)
 int16_t eixo_x_norm = 0;
 int16_t eixo_y_norm = 0;
+int testing = 1;
 
 // Configura o joystick (ADC para eixos e GPIO para o botão)
 void init_joystick() {
@@ -25,6 +26,12 @@ void init_joystick() {
     gpio_pull_up(BOTAO_A); // Habilita o resistor pull-up (botão em nível alto quando solto)
     // Configura a interrupção para detectar a borda de subida (botão solto)
     gpio_set_irq_enabled_with_callback(BOTAO_A, GPIO_IRQ_EDGE_RISE, true, &botao_interrupcao);
+
+    gpio_init(BOTAO_B); // Inicializa o pino 22 para o botão
+    gpio_set_dir(BOTAO_B, GPIO_IN); // Configura o pino como entrada
+    gpio_pull_up(BOTAO_B); // Habilita o resistor pull-up (botão em nível alto quando solto)
+    // Configura a interrupção para detectar a borda de subida (botão solto)
+    gpio_set_irq_enabled_with_callback(BOTAO_B, GPIO_IRQ_EDGE_RISE, true, &botao_interrupcao);
 
     
 }
@@ -74,6 +81,17 @@ void botao_interrupcao(uint gpio, uint32_t events) {
             }
             else if(tema_cor[2]!=0) {
                 set_cor(255, 0, 0); // Vermelho
+            }
+        }
+    }
+
+    if (gpio == BOTAO_B) { // Verifica se a interrupção ocorreu no pino do botão
+        if (events & GPIO_IRQ_EDGE_RISE) { // Verifica se foi uma borda de subida (botão solto)
+            if(testing == 1){
+                testing = 0;
+            }
+            else if(testing == 0){
+                testing = 1;
             }
         }
     }

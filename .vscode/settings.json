@@ -46,6 +46,7 @@
         "stdio.h": "c",
         "testjoystick.h": "c",
         "pio.h": "c",
-        "malha_led.h": "c"
+        "malha_led.h": "c",
+        "stdint.h": "c"
     }
 }
