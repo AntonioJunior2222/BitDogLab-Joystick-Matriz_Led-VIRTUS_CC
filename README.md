@@ -61,6 +61,7 @@ A biblioteca `joystick_lib` é responsável por ler os valores do joystick e nor
      - Usa os valores brutos do ADC (0-4095) e os mapeia para -100 (esquerda/baixo) a 100 (direita/cima), com 0 sendo o centro.
 
 4. **`void botao_interrupcao(uint gpio, uint32_t events)`**
+   - **AVISO**: CASO NÃO VÁ UTILIZAR A MATRIZ DE LEDS, MODIFIQUE OU COMENTE ESTA FUNÇÃO.
    - **Descrição**: Função de callback para tratar interrupções dos botões.
    - **Detalhes**:
      - Alterna a cor tema da matriz de LED entre vermelho, verde e azul quando o botão do joystick é pressionado.

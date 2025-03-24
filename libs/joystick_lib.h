@@ -50,6 +50,7 @@ bool get_botao();
 // Parâmetros:
 // - gpio: Pino GPIO que gerou a interrupção
 // - events: Eventos que acionaram a interrupção (borda de subida ou descida)
+// OBS: Você vai precisar modificar esta função caso não esteja utilizando a Matriz de LED's
 void botao_interrupcao(uint gpio, uint32_t events);
 
 // Função para normalizar os valores dos eixos X e Y do joystick
